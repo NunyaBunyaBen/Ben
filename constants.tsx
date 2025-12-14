@@ -24,6 +24,13 @@ export const NAV_STRUCTURE: NavItem[] = [
     description: 'Your Daily Command Center'
   },
   {
+    id: 'legal-demand-writer',
+    label: 'Legal Demand Writer',
+    icon: 'Scale',
+    type: PageType.LEGAL_DEMANDS,
+    description: 'Draft, version, and export demand letters'
+  },
+  {
     id: 'offers',
     label: 'Offers & Pricing',
     icon: 'DollarSign',

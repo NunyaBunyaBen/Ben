@@ -21,6 +21,7 @@ import { EnvironmentGuide } from './components/EnvironmentGuide';
 import { ClientPortal } from './components/ClientPortal';
 import { SystemStatus } from './components/SystemStatus';
 import { LightningBot } from './components/LightningBot';
+import { LegalDemandWriter } from './components/LegalDemandWriter';
 import { PageType, PageContent } from './types';
 import { NAV_STRUCTURE, INITIAL_OUTREACH_EVENTS, INITIAL_CALENDAR_EVENTS } from './constants';
 import { Menu } from 'lucide-react';
@@ -86,6 +87,8 @@ const App: React.FC = () => {
         return <ContentPlanner />;
       case PageType.ENVIRONMENT:
         return <EnvironmentGuide />;
+      case PageType.LEGAL_DEMANDS:
+        return <LegalDemandWriter />;
       case PageType.DATABASE:
          if (activeId.includes('clients') || activeId.includes('sales')) {
            return <ClientDB activeId={activeId} onNavigate={handleNavigate} />;
