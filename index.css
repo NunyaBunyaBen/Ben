@@ -1,0 +1,12 @@
+/*
+  This file exists to satisfy the /index.css link in index.html.
+  The app primarily uses Tailwind via the CDN script in index.html.
+*/
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
