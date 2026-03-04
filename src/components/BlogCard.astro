@@ -17,7 +17,16 @@ const formattedDate = date.toLocaleDateString("en-AU", {
 ---
 
 <a href={`/blog/${slug}`} class="group block">
-  <article class="p-8 bg-dark-card rounded-xl border border-white/5 hover:border-magenta/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,77,221,0.05)] h-full flex flex-col">
+  <article class="bg-dark-card rounded-xl border border-white/5 hover:border-magenta/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,77,221,0.05)] h-full flex flex-col overflow-hidden">
+    <div class="relative h-48 overflow-hidden">
+      <img
+        src={`/images/blog/${slug}.jpg`}
+        alt={title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        onerror="this.parentElement.style.display='none'"
+      />
+    </div>
+    <div class="p-8 flex flex-col flex-1">
     <div class="flex items-center gap-3 mb-4">
       <time class="text-white/40 text-xs font-body uppercase tracking-wider">
         {formattedDate}
@@ -44,6 +53,7 @@ const formattedDate = date.toLocaleDateString("en-AU", {
       <span class="text-teal text-sm font-body font-semibold uppercase tracking-widest group-hover:text-magenta transition-colors">
         Read More &rarr;
       </span>
+    </div>
     </div>
   </article>
 </a>

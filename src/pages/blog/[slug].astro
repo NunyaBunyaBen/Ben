@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
 
 export const prerender = true;
 
@@ -45,6 +50,15 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-AU", {
             {tag}
           </span>
         ))}
+      </div>
+
+      <div class="rounded-xl overflow-hidden mb-12 aspect-video">
+        <img
+          src={`/images/blog/${post.id}.jpg`}
+          alt={post.data.title}
+          class="w-full h-full object-cover"
+          onerror="this.parentElement.style.display='none'"
+        />
       </div>
 
       <div class="prose prose-invert prose-lg max-w-none
