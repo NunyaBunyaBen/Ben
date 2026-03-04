@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  tags: string[];
+  slug: string;
+}
+
+const { title, description, date, tags, slug } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-AU", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<a href={`/blog/${slug}`} class="group block">
+  <article class="bg-dark-card rounded-xl border border-white/5 hover:border-magenta/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,77,221,0.05)] h-full flex flex-col overflow-hidden">
+    <div class="relative h-48 overflow-hidden">
+      <img
+        src={`/images/blog/${slug}.jpg`}
+        alt={title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        onerror="this.parentElement.style.display='none'"
+      />
+    </div>
+    <div class="p-8 flex flex-col flex-1">
+    <div class="flex items-center gap-3 mb-4">
+      <time class="text-white/40 text-xs font-body uppercase tracking-wider">
+        {formattedDate}
+      </time>
+      <span class="text-white/20">|</span>
+      <div class="flex gap-2">
+        {tags.map((tag) => (
+          <span class="text-xs font-body font-semibold uppercase tracking-wider text-teal">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <h3 class="font-heading font-bold text-xl md:text-2xl text-white mb-3 group-hover:text-teal transition-colors">
+      {title}
+    </h3>
+
+    <p class="text-white/60 text-sm leading-relaxed flex-1">
+      {description}
+    </p>
+
+    <div class="mt-6">
+      <span class="text-teal text-sm font-body font-semibold uppercase tracking-widest group-hover:text-magenta transition-colors">
+        Read More &rarr;
+      </span>
+    </div>
+    </div>
+  </article>
+</a>

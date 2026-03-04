@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal: #00E5CC;
+  --color-magenta: #FF4DDD;
+  --color-chartreuse: #7FFF00;
+  --color-dark: #111111;
+  --color-dark-lighter: #1a1a1a;
+  --color-dark-card: #1e1e1e;
+  --color-white: #FFFFFF;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  line-height: 1.1;
+}
+
+::selection {
+  background-color: var(--color-teal);
+  color: var(--color-dark);
+}
+
+a {
+  color: var(--color-teal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-magenta);
+}

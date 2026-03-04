@@ -1,0 +1,65 @@
+---
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Work" },
+  { href: "/blog", label: "Blog" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/founder-package.html", label: "Founder Package", highlight: true },
+  { href: "/book", label: "Book a Call" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading font-[900] text-2xl tracking-wider text-teal hover:text-teal">
+      NUNYA BUNYA
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-white"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <div id="nav-links" class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "font-body font-semibold text-sm uppercase tracking-widest transition-colors",
+            link.highlight
+              ? "text-teal hover:text-magenta"
+              : "text-white/70 hover:text-teal",
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="block py-3 font-body font-semibold text-sm uppercase tracking-widest text-white/70 hover:text-teal transition-colors border-b border-white/5"
+      >
+        {link.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

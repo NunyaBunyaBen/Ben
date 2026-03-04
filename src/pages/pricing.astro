@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PricingCard from "../components/PricingCard.astro";
+import CTA from "../components/CTA.astro";
+
+const tiers = [
+  {
+    name: "STARTER",
+    price: "$1,500",
+    description: "For businesses getting started with professional marketing.",
+    features: [
+      "Social media management (2 platforms)",
+      "4 branded posts per week",
+      "Monthly performance report",
+      "Google Business Profile optimisation",
+      "Basic SEO audit & recommendations",
+      "Email support",
+    ],
+    cta: "Get Started",
+    ctaHref: "/book",
+  },
+  {
+    name: "GROWTH",
+    price: "$3,500",
+    description: "For businesses ready to scale and dominate their market.",
+    features: [
+      "Everything in Starter, plus:",
+      "Social media management (4 platforms)",
+      "8 branded posts per week",
+      "Google & Meta ad management",
+      "SEO strategy & content creation",
+      "Monthly strategy call",
+      "Email & SMS marketing setup",
+      "Fortnightly performance reports",
+    ],
+    highlighted: true,
+    cta: "Start Growing",
+    ctaHref: "/book",
+  },
+  {
+    name: "DOMINATION",
+    price: "$6,500",
+    description: "For businesses that want to own their space. No compromises.",
+    features: [
+      "Everything in Growth, plus:",
+      "Full content strategy & production",
+      "Video content creation",
+      "Advanced ad campaigns & retargeting",
+      "Conversion rate optimisation",
+      "Weekly strategy calls",
+      "Priority support (Slack channel)",
+      "Quarterly brand review",
+    ],
+    cta: "Let's Dominate",
+    ctaHref: "/book",
+  },
+];
+---
+
+<BaseLayout title="Pricing — Nunya Bunya" description="Transparent pricing for marketing that actually works. No hidden fees, no lock-in contracts.">
+  <section class="pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+          Pricing
+        </p>
+        <h1 class="font-heading font-[900] text-4xl md:text-6xl mb-6">
+          INVEST IN MARKETING<br />
+          <span class="bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+            THAT ACTUALLY WORKS
+          </span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">
+          No lock-in contracts. No hidden fees. Just real results or we'll make it right.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {tiers.map((tier) => (
+          <PricingCard {...tier} />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-white/40 text-sm">
+          All prices in AUD. Custom packages available.
+          <a href="/book" class="text-teal hover:text-magenta transition-colors ml-1">
+            Let's chat about what you need.
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

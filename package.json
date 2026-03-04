@@ -1,25 +1,25 @@
 {
-  "name": "copy-of-nunya-bunya-hq",
-  "private": true,
-  "version": "0.0.0",
+  "name": "nunya-bunya-website",
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.84.0",
-    "lucide-react": "^0.554.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "recharts": "^3.4.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vercel/node": "^5.5.8",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@astrojs/node": "^9.5.4",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/vercel": "^9.0.4",
+    "@react-email/components": "^1.0.8",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "@vercel/analytics": "^1.6.1",
+    "astro": "^5.18.0",
+    "autoprefixer": "^10.4.27",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "resend": "^6.9.3",
+    "tailwindcss": "^4.2.1"
   }
 }

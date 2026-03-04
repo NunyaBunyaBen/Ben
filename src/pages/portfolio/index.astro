@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PortfolioCard from "../../components/PortfolioCard.astro";
+import SocialCarousel from "../../components/SocialCarousel.astro";
+import CTA from "../../components/CTA.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("portfolio")).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="Our Work — Nunya Bunya" description="Bold marketing campaigns that deliver real results. See what we've done for businesses like yours.">
+  <section class="pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+          Portfolio
+        </p>
+        <h1 class="font-heading font-[900] text-4xl md:text-6xl mb-6">
+          WORK THAT<br />
+          <span class="bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+            SPEAKS FOR ITSELF
+          </span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">
+          We don't do case studies full of buzzwords. Here are the real results we've delivered for real businesses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <PortfolioCard
+            title={project.data.title}
+            description={project.data.description}
+            client={project.data.client}
+            tags={project.data.tags}
+            results={project.data.results}
+            slug={project.id}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SocialCarousel />
+
+  <CTA />
+</BaseLayout>

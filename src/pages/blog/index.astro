@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="Blog — Nunya Bunya" description="No-BS marketing insights for businesses that want to grow. Strategy, SEO, social media, and more.">
+  <section class="pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+          Blog
+        </p>
+        <h1 class="font-heading font-[900] text-4xl md:text-6xl mb-6">
+          NO-BS MARKETING<br />
+          <span class="bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+            INSIGHTS
+          </span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">
+          Practical advice from people who actually do this for a living. No fluff, no filler.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            tags={post.data.tags}
+            slug={post.id}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-dark border-t border-white/5 py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <p class="font-heading font-[900] text-xl tracking-wider text-teal mb-4">
+          NUNYA BUNYA
+        </p>
+        <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+          Bold digital marketing that makes your competitors uncomfortable. Brisbane, Queensland.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-heading font-bold text-sm tracking-widest text-teal mb-4">NAVIGATE</p>
+        <div class="flex flex-col gap-2">
+          <a href="/about" class="text-white/60 text-sm hover:text-teal transition-colors">About</a>
+          <a href="/portfolio" class="text-white/60 text-sm hover:text-teal transition-colors">Work</a>
+          <a href="/blog" class="text-white/60 text-sm hover:text-teal transition-colors">Blog</a>
+          <a href="/pricing" class="text-white/60 text-sm hover:text-teal transition-colors">Pricing</a>
+          <a href="/book" class="text-white/60 text-sm hover:text-teal transition-colors">Book a Call</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-heading font-bold text-sm tracking-widest text-teal mb-4">GET IN TOUCH</p>
+        <div class="flex flex-col gap-2">
+          <a href="/contact" class="text-white/60 text-sm hover:text-teal transition-colors">Contact Us</a>
+          <a href="mailto:ben@nunyabunya.com" class="text-white/60 text-sm hover:text-teal transition-colors">
+            ben@nunyabunya.com
+          </a>
+          <p class="text-white/60 text-sm">Brisbane, Queensland, Australia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-white/30 text-xs">
+        &copy; {year} Nunya Bunya Pty Ltd. All rights reserved.
+      </p>
+      <div class="flex gap-4">
+        <a href="/terms" class="text-white/30 text-xs hover:text-white/60 transition-colors">Terms of Service</a>
+        <a href="/privacy" class="text-white/30 text-xs hover:text-white/60 transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

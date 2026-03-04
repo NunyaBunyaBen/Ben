@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    title: "SEO",
+    description: "Dominate search results. We build SEO strategies that bring in leads while you sleep.",
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+  },
+  {
+    title: "Social Media",
+    description: "Stop posting and praying. We create social content that stops the scroll and drives action.",
+    icon: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z",
+  },
+  {
+    title: "Paid Ads",
+    description: "Every dollar tracked. Every click optimised. Paid campaigns that actually return more than they cost.",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "Content",
+    description: "Words that sell. We craft content that builds authority, trust, and a pipeline full of prospects.",
+    icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+  },
+  {
+    title: "Branding",
+    description: "Look like the leader you are. Brand identity that's distinctive, memorable, and impossible to ignore.",
+    icon: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
+  },
+  {
+    title: "Web Design",
+    description: "Websites that convert, not just exist. Fast, sharp, built to turn visitors into paying clients.",
+    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  },
+];
+---
+
+<section class="py-20 md:py-28 bg-dark-lighter">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+        What We Do
+      </p>
+      <h2 class="font-heading font-[900] text-4xl md:text-5xl">
+        SERVICES THAT ACTUALLY<br />
+        <span class="text-magenta">MOVE THE NEEDLE</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <div class="group p-8 bg-dark rounded-xl border border-white/5 hover:border-teal/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,204,0.05)]">
+          <div class="w-12 h-12 mb-6 flex items-center justify-center rounded-lg bg-teal/10 group-hover:bg-teal/20 transition-colors">
+            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon} />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl mb-3 text-teal">{service.title}</h3>
+          <p class="text-white/60 text-sm leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
