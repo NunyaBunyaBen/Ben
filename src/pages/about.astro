@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<BaseLayout
+  title="About — Nunya Bunya"
+  description="We're a Brisbane-based digital marketing agency that doesn't do fluff. Real strategy, real results, real talk."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+        About Us
+      </p>
+      <h1 class="font-heading font-[900] text-4xl md:text-7xl leading-none mb-8">
+        WE'RE THE AGENCY<br />
+        <span class="bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+          YOUR COMPETITORS HATE.
+        </span>
+      </h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl leading-relaxed">
+        Nunya Bunya is a Brisbane-based digital marketing agency built for businesses that are serious about growing. No fluff, no vanity metrics, no BS. Just campaigns that move the needle.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-body font-semibold text-teal text-sm uppercase tracking-[0.3em] mb-4">
+          The Story
+        </p>
+        <h2 class="font-heading font-[900] text-3xl md:text-5xl mb-6">
+          BUILT FROM THE<br />GROUND UP
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-4">
+          Nunya Bunya was built out of frustration. Too many Brisbane businesses were being overcharged by agencies delivering underwhelming results — pretty reports, no real growth.
+        </p>
+        <p class="text-white/60 leading-relaxed mb-4">
+          We started with one simple belief: marketing should make businesses money. Everything we do is built around that idea.
+        </p>
+        <p class="text-white/60 leading-relaxed">
+          We're a lean, focused team. No account managers padding invoices. No juniors running your campaigns. You get direct access to the people doing the work.
+        </p>
+      </div>
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
+        <div class="grid grid-cols-2 gap-6">
+          {[
+            { stat: "Brisbane", label: "Based & proud" },
+            { stat: "100%", label: "Transparent pricing" },
+            { stat: "0", label: "Lock-in contracts" },
+            { stat: "Real", label: "People, real results" },
+          ].map(({ stat, label }) => (
+            <div class="text-center p-4">
+              <p class="font-heading font-[900] text-3xl text-teal mb-1">{stat}</p>
+              <p class="text-white/50 text-sm">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+        How We Work
+      </p>
+      <h2 class="font-heading font-[900] text-3xl md:text-5xl mb-12">
+        THE NUNYA BUNYA WAY
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            number: "01",
+            title: "No Bullshit",
+            body: "We tell you what's working and what isn't. If a campaign isn't performing, we say so and fix it — not hide it in a report.",
+          },
+          {
+            number: "02",
+            title: "Results First",
+            body: "Likes and impressions are nice. Revenue is better. Every decision we make is tied back to your business goals.",
+          },
+          {
+            number: "03",
+            title: "You're Always In Control",
+            body: "No lock-in contracts. No surprise invoices. You own your accounts, your data, your campaigns. Always.",
+          },
+        ].map(({ number, title, body }) => (
+          <div class="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-teal/30 transition-colors">
+            <p class="font-heading font-[900] text-4xl text-teal/30 mb-4">{number}</p>
+            <h3 class="font-heading font-[900] text-xl mb-3">{title}</h3>
+            <p class="text-white/60 text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we work with -->
+  <section class="py-20 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="font-body font-semibold text-teal text-sm uppercase tracking-[0.3em] mb-4">
+        Who We Work With
+      </p>
+      <h2 class="font-heading font-[900] text-3xl md:text-5xl mb-6">
+        WE'RE NOT FOR EVERYONE.<br />
+        <span class="text-white/40">AND THAT'S THE POINT.</span>
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl mb-10 leading-relaxed">
+        We work best with Brisbane businesses that are serious about growth — trades, hospitality, retail, health, professional services. If you're looking for someone to post pretty pictures and call it a day, we're probably not your people.
+      </p>
+      <a
+        href="/book"
+        class="inline-flex items-center justify-center px-8 py-4 bg-teal text-dark font-body font-semibold text-sm uppercase tracking-widest rounded-lg hover:bg-teal/90 transition-all hover:shadow-[0_0_30px_rgba(0,229,204,0.3)]"
+      >
+        Let's See If We're a Fit
+      </a>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

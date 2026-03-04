@@ -17,6 +17,7 @@ const year = new Date().getFullYear();
       <div>
         <p class="font-heading font-bold text-sm tracking-widest text-teal mb-4">NAVIGATE</p>
         <div class="flex flex-col gap-2">
+          <a href="/about" class="text-white/60 text-sm hover:text-teal transition-colors">About</a>
           <a href="/portfolio" class="text-white/60 text-sm hover:text-teal transition-colors">Work</a>
           <a href="/blog" class="text-white/60 text-sm hover:text-teal transition-colors">Blog</a>
           <a href="/pricing" class="text-white/60 text-sm hover:text-teal transition-colors">Pricing</a>
@@ -27,18 +28,23 @@ const year = new Date().getFullYear();
       <div>
         <p class="font-heading font-bold text-sm tracking-widest text-teal mb-4">GET IN TOUCH</p>
         <div class="flex flex-col gap-2">
-          <a href="mailto:hello@nunyabunya.com" class="text-white/60 text-sm hover:text-teal transition-colors">
-            hello@nunyabunya.com
+          <a href="/contact" class="text-white/60 text-sm hover:text-teal transition-colors">Contact Us</a>
+          <a href="mailto:ben@nunyabunya.com" class="text-white/60 text-sm hover:text-teal transition-colors">
+            ben@nunyabunya.com
           </a>
           <p class="text-white/60 text-sm">Brisbane, Queensland, Australia</p>
         </div>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-white/5 text-center">
+    <div class="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3">
       <p class="text-white/30 text-xs">
         &copy; {year} Nunya Bunya Pty Ltd. All rights reserved.
       </p>
+      <div class="flex gap-4">
+        <a href="/terms" class="text-white/30 text-xs hover:text-white/60 transition-colors">Terms of Service</a>
+        <a href="/privacy" class="text-white/30 text-xs hover:text-white/60 transition-colors">Privacy Policy</a>
+      </div>
     </div>
   </div>
 </footer>

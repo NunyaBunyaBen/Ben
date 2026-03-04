@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404 — Page Not Found | Nunya Bunya" description="This page doesn't exist. But your competition does. Let's fix that.">
+  <section class="min-h-[80vh] flex items-center justify-center pt-20">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <p class="font-heading font-[900] text-[120px] md:text-[180px] leading-none bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+        404
+      </p>
+      <h1 class="font-heading font-[900] text-3xl md:text-5xl mb-6 -mt-4">
+        THIS PAGE DOESN'T EXIST.
+        <br />
+        <span class="text-white/40">YOUR COMPETITION DOES.</span>
+      </h1>
+      <p class="text-white/60 text-lg mb-10">
+        Whatever you were looking for isn't here. But while you're at it — let's talk about making your competitors uncomfortable.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-teal text-dark font-body font-semibold text-sm uppercase tracking-widest rounded-lg hover:bg-teal/90 transition-all hover:shadow-[0_0_30px_rgba(0,229,204,0.3)]"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/book"
+          class="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-body font-semibold text-sm uppercase tracking-widest rounded-lg hover:border-magenta/50 hover:text-magenta transition-all"
+        >
+          Book a Free Call
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
