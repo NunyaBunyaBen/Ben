@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
 
 interface Props {
   title: string;
@@ -35,5 +36,6 @@ const { title, description = "Bold digital marketing that makes your competitors
       <slot />
     </main>
     <Footer />
+    <Analytics client:only="react" />
   </body>
 </html>
