@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PortfolioCard from "../../components/PortfolioCard.astro";
+import SocialCarousel from "../../components/SocialCarousel.astro";
 import CTA from "../../components/CTA.astro";
 import { getCollection } from "astro:content";
 
@@ -41,6 +42,8 @@ const projects = (await getCollection("portfolio")).sort(
       </div>
     </div>
   </section>
+
+  <SocialCarousel />
 
   <CTA />
 </BaseLayout>

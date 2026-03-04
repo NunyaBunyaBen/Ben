@@ -1,0 +1,112 @@
+---
+/**
+ * Social media work carousel.
+ * Add your post/ad screenshots to /public/social/ as .jpg or .png files.
+ * They'll automatically appear in the carousel.
+ * Recommended image size: 1080x1080 or 1080x1350 (standard social post sizes).
+ */
+---
+
+<section class="py-20 md:py-28 bg-dark-lighter">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+        Social Media
+      </p>
+      <h2 class="font-heading font-[900] text-4xl md:text-5xl mb-4">
+        POSTS, ADS &<br />
+        <span class="text-magenta">CONTENT WE'VE CREATED</span>
+      </h2>
+      <p class="text-white/60 text-lg max-w-xl mx-auto">
+        Scroll through some of the social media content we've produced for our clients.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div
+        id="carousel"
+        class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6"
+        style="scrollbar-width: none; -ms-overflow-style: none;"
+      >
+        <div id="carousel-items" class="flex gap-4">
+          <!-- Images loaded dynamically from /public/social/ -->
+          <div class="flex items-center justify-center min-w-[280px] h-[350px] rounded-xl border border-dashed border-white/20 text-white/30 text-sm text-center px-8">
+            Add your social media screenshots to<br /><code class="text-teal/60">/public/social/</code><br />and they'll appear here
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="carousel-prev"
+        class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-dark/80 border border-white/10 text-white hover:border-teal/50 hover:text-teal transition-all z-10"
+        aria-label="Previous"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        id="carousel-next"
+        class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center rounded-full bg-dark/80 border border-white/10 text-white hover:border-teal/50 hover:text-teal transition-all z-10"
+        aria-label="Next"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  #carousel::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  const carousel = document.getElementById("carousel");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  const itemsContainer = document.getElementById("carousel-items");
+
+  // Load images from /social/ directory
+  async function loadSocialImages() {
+    try {
+      const response = await fetch("/api/social-images");
+      if (!response.ok) return;
+      const images: string[] = await response.json();
+
+      if (images.length === 0) return;
+
+      // Clear placeholder
+      itemsContainer!.innerHTML = "";
+
+      images.forEach((src: string) => {
+        const div = document.createElement("div");
+        div.className = "snap-start shrink-0";
+        div.innerHTML = `
+          <div class="w-[280px] md:w-[300px] rounded-xl overflow-hidden border border-white/10 hover:border-teal/30 transition-all">
+            <img src="${src}" alt="Social media content" class="w-full h-auto object-cover" loading="lazy" />
+          </div>
+        `;
+        itemsContainer!.appendChild(div);
+      });
+    } catch {
+      // Keep placeholder if API not available
+    }
+  }
+
+  loadSocialImages();
+
+  const scrollAmount = 320;
+
+  prevBtn?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+</script>
