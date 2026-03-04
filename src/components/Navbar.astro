@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/portfolio", label: "Work" },
   { href: "/blog", label: "Blog" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/founder-package.html", label: "Founder Package", highlight: true },
   { href: "/book", label: "Book a Call" },
 ];
 ---
@@ -29,7 +30,12 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="font-body font-semibold text-sm uppercase tracking-widest text-white/70 hover:text-teal transition-colors"
+          class:list={[
+            "font-body font-semibold text-sm uppercase tracking-widest transition-colors",
+            link.highlight
+              ? "text-teal hover:text-magenta"
+              : "text-white/70 hover:text-teal",
+          ]}
         >
           {link.label}
         </a>
