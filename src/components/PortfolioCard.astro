@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  client: string;
+  tags: string[];
+  results?: string;
+  slug: string;
+}
+
+const { title, description, client, tags, results, slug } = Astro.props;
+---
+
+<a href={`/portfolio/${slug}`} class="group block">
+  <div class="p-8 bg-dark-card rounded-xl border border-white/5 hover:border-teal/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,229,204,0.05)] h-full flex flex-col">
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="text-xs font-body font-semibold uppercase tracking-wider text-magenta bg-magenta/10 px-3 py-1 rounded-full">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <p class="text-white/40 text-xs font-body font-semibold uppercase tracking-widest mb-2">
+      {client}
+    </p>
+
+    <h3 class="font-heading font-bold text-xl md:text-2xl text-teal mb-3 group-hover:text-magenta transition-colors">
+      {title}
+    </h3>
+
+    <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+      {description}
+    </p>
+
+    {results && (
+      <div class="pt-4 border-t border-white/5">
+        <p class="text-chartreuse text-sm font-body font-semibold">
+          {results}
+        </p>
+      </div>
+    )}
+  </div>
+</a>

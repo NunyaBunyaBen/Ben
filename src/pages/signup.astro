@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SignupForm from "../components/SignupForm.astro";
+---
+
+<BaseLayout title="Sign Up — Nunya Bunya" description="Ready to start? Sign up for a Nunya Bunya package and let's get to work.">
+  <section class="pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="font-body font-semibold text-magenta text-sm uppercase tracking-[0.3em] mb-4">
+          Let's Go
+        </p>
+        <h1 class="font-heading font-[900] text-4xl md:text-6xl mb-6">
+          READY TO STOP<br />
+          <span class="bg-gradient-to-r from-teal to-magenta bg-clip-text text-transparent">
+            BLENDING IN?
+          </span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">
+          Pick your package and we'll have you onboarded within 48 hours. No red tape, no waiting.
+        </p>
+      </div>
+
+      <SignupForm />
+    </div>
+  </section>
+</BaseLayout>
