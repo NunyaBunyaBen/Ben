@@ -31,7 +31,7 @@ export const POST: APIRoute = async ({ request }) => {
     const packageName = packageNames[selectedPackage] || selectedPackage;
 
     await resend.emails.send({
-      from: "Nunya Bunya <onboarding@resend.dev>",
+      from: "Ben @ Nunya Bunya <ben@nunyabunya.com>",
       to: email,
       subject: `Welcome to Nunya Bunya — ${packageName} Package`,
       html: buildWelcomeEmail(name, packageName),
